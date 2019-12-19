@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    // gradle sdk
+    implementation gradleApi()
+    // groovy sdk
+    implementation localGroovy()
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+repositories {
+    mavenCentral()
+}
+
+group = 'com.suika.plugin'
+version = '1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('/Users/butter/Desktop/suika/maven'))
+        }
+    }
+}
